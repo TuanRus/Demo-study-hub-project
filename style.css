@@ -708,8 +708,10 @@ input[type=number] {
         height: 70vh;
     }
     .clock-time {
-        font-size: 5rem;
+        font-size: 13vw;
+        text-align: center;
     }
+
     .clock-date {
         font-size: 1.2rem;
         text-align: center;
@@ -718,8 +720,10 @@ input[type=number] {
     #view-timer.active, #view-stopwatch.active {
         height: 70vh;
     }
+
     .timer-display {
-        font-size: 4.5rem;
+        font-size: 13vw;
+        text-align: center;
     }
     
     .timer-inputs {
@@ -737,8 +741,13 @@ input[type=number] {
     }
 
     .pomo-card, .todo-card, .settings-card {
-        min-width: 280px; 
-        flex-basis: 280px;
+        min-width: 280px;
+        max-width: 450px; 
+        width: 90%;       
+        flex-basis: auto; 
+        flex-grow: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .pomo-time-display {
@@ -746,8 +755,10 @@ input[type=number] {
     }
 
     .about-card-container {
-        grid-template-columns: 1fr; 
-        margin-top: 20px;
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;
+        gap: 24px
     }
 
     .music-player-container {
@@ -759,4 +770,12 @@ input[type=number] {
     .music-player-container iframe {
         height: 80px; 
     }
+
+    .about-card {
+        width: 90%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 }
