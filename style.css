@@ -650,3 +650,113 @@ input[type=number] {
     border: none;
     border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+
+    :root {
+        --sidebar-width: 70px; 
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        padding: 20px 10px;
+    }
+
+    .sidebar-header span,
+    .nav-link span {
+        display: none;
+    }
+
+    .sidebar-header {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .sidebar-header i {
+        font-size: 26px;
+    }
+
+    .nav-link {
+        justify-content: center;
+        padding: 12px 10px;
+    }
+    .nav-link i {
+        font-size: 24px;
+    }
+
+    .main-content {
+        margin-left: var(--sidebar-width); 
+        padding: 20px 15px;
+    }
+
+    .header-bar {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .music-player-bar {
+        width: 100%;
+        min-width: unset; 
+    }
+
+    .user-controls {
+        justify-content: flex-end;
+    }
+
+    #view-clock.active {
+        height: 70vh;
+    }
+    .clock-time {
+        font-size: 5rem;
+    }
+    .clock-date {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    #view-timer.active, #view-stopwatch.active {
+        height: 70vh;
+    }
+    .timer-display {
+        font-size: 4.5rem;
+    }
+    
+    .timer-inputs {
+        gap: 8px;
+        transform: scale(0.9);
+    }
+    .timer-inputs input {
+        width: 80px;
+        font-size: 1.2rem;
+    }
+
+    #view-pomodoro.active {
+        margin-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    .pomo-card, .todo-card, .settings-card {
+        min-width: 280px; 
+        flex-basis: 280px;
+    }
+
+    .pomo-time-display {
+        font-size: 4.5rem; 
+    }
+
+    .about-card-container {
+        grid-template-columns: 1fr; 
+        margin-top: 20px;
+    }
+
+    .music-player-container {
+        width: 95%; 
+        max-width: unset;
+        bottom: 10px;
+    }
+    
+    .music-player-container iframe {
+        height: 80px; 
+    }
+}
