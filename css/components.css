@@ -765,3 +765,39 @@ input[type=number] {
     cursor: pointer;
     font-weight: bold;
 }
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.pomo-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000;
+}
+
+.pomo-modal.hidden { display: none; }
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    border: 1px solid var(--accent-color);
+}
+
+.modal-content h4 { color: var(--accent-color); margin-bottom: 10px; }
+.modal-content ul { margin: 15px 0; padding-left: 20px; }
+#close-ex-btn {
+    background: var(--accent-color);
+    border: none; padding: 8px 20px;
+    border-radius: 5px; cursor: pointer; font-weight: bold;
+}
