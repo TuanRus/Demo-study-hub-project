@@ -1,0 +1,625 @@
+/* [EN] BUTTON COMPONENTS: Standardized interactive elements. */
+/* [VN] THÀNH PHẦN NÚT BẤM: Các phần tử tương tác được chuẩn hóa. */
+.login-btn {
+    padding: 10px 20px;
+    background-color: var(--btn-bg);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--btn-bg);
+    color: var(--primary-text);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--btn-bg);
+    color: var(--primary-text);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.icon-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+/* [EN] USER HEADER COMPONENTS: User info and inputs in header. */
+/* [VN] THÀNH PHẦN TIÊU ĐỀ NGƯỜI DÙNG: Thông tin và ô nhập liệu trên tiêu đề. */
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-greeting {
+    font-weight: 500;
+    color: var(--secondary-text);
+}
+
+.music-player-bar {
+    display: flex;
+    gap: 10px;
+    width: 40%;
+    min-width: 300px;
+}
+
+.music-player-bar input {
+    flex-grow: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--primary-text);
+    font-size: 14px;
+}
+
+.music-player-bar input::placeholder {
+    color: var(--secondary-text);
+}
+
+.music-player-bar .icon-btn {
+    background-color: var(--accent-color);
+}
+
+.music-player-bar .icon-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+#save-music-btn {
+    background-color: var(--btn-bg);
+}
+
+#save-music-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+/* [EN] CARD COMPONENTS: Reusable containers for widgets. */
+/* [VN] THÀNH PHẦN THẺ: Các khung chứa tái sử dụng cho tiện ích. */
+.pomo-card,
+.todo-card,
+.settings-card,
+.about-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.pomo-card,
+.todo-card,
+.settings-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 320px;
+    min-width: 320px;
+}
+
+.about-card {
+    padding: 32px;
+    text-align: center;
+}
+
+.about-card h2,
+.about-card h3,
+.todo-card h3,
+.settings-card h3 {
+    margin-bottom: 16px;
+}
+
+.about-card h2,
+.about-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.todo-card h3,
+.settings-card h3 {
+    font-size: 1.25rem;
+}
+
+.about-card p {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-bottom: 24px;
+}
+
+/* [EN] CLOCK COMPONENTS: Time formatting displays. */
+/* [VN] THÀNH PHẦN ĐỒNG HỒ: Hiển thị định dạng thời gian. */
+.clock-time {
+    font-size: 10rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.clock-date {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    margin-top: 10px;
+}
+
+/* [EN] POMODORO COMPONENTS: Timer specific UI. */
+/* [VN] THÀNH PHẦN POMODORO: Giao diện riêng của đồng hồ Pomodoro. */
+.pomo-timer {
+    text-align: center;
+}
+
+.pomo-status {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.pomo-time-display {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--accent-color);
+}
+
+.pomo-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.pomo-controls .icon-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+}
+
+#pomo-start-pause {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+#pomo-start-pause:hover {
+    background-color: var(--accent-hover);
+}
+
+/* [EN] TODO LIST COMPONENTS: Task management UI. */
+/* [VN] THÀNH PHẦN DANH SÁCH CÔNG VIỆC: Giao diện quản lý tác vụ. */
+.todo-card {
+    min-height: 400px;
+}
+
+.todo-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.todo-input-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--btn-bg);
+    color: var(--primary-text);
+}
+
+.todo-input-group .icon-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    flex-shrink: 0;
+}
+
+#todo-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--btn-bg);
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.todo-item span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: var(--secondary-text);
+}
+
+.todo-item-controls {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.todo-item-controls button {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.todo-item-controls button.complete-btn:hover {
+    color: #4caf50;
+}
+
+.todo-item-controls button.delete-btn:hover {
+    color: var(--error-color);
+}
+
+/* [EN] SETTINGS COMPONENTS: Configuration inputs. */
+/* [VN] THÀNH PHẦN CÀI ĐẶT: Các ô nhập cấu hình. */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.setting-item label {
+    color: var(--secondary-text);
+}
+
+.setting-item input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--btn-bg);
+    color: var(--primary-text);
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* [EN] TIMER & STOPWATCH COMPONENTS */
+/* [VN] THÀNH PHẦN BẤM GIỜ & ĐẾM NGƯỢC */
+.timer-display {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.timer-inputs {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.timer-inputs input {
+    width: 100px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--primary-text);
+    text-align: center;
+    font-size: 1.5rem;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+.timer-inputs input::-webkit-inner-spin-button,
+.timer-inputs input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.timer-controls .icon-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+
+/* [EN] ABOUT & MUSIC LIST COMPONENTS */
+/* [VN] THÀNH PHẦN GIỚI THIỆU & DANH SÁCH NHẠC */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.social-link {
+    font-size: 32px;
+    color: var(--primary-text);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.bank-info img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.favorite-music-card {
+    text-align: left;
+}
+
+#favorite-music-list {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--btn-bg);
+    margin-bottom: 8px;
+}
+
+.music-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    word-break: break-all;
+}
+
+.music-item-info i {
+    font-size: 24px;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.music-item-info span {
+    font-weight: 500;
+}
+
+.music-item-info a {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.music-item-info a:hover {
+    text-decoration: underline;
+}
+
+.music-item-controls button {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.music-item-controls button:hover {
+    color: var(--error-color);
+}
+
+/* [EN] FLOATING MUSIC PLAYER COMPONENT */
+/* [VN] THÀNH PHẦN TRÌNH PHÁT NHẠC NỔI */
+.music-player-container {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 800px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    display: none;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+}
+
+.music-player-container.active {
+    display: block;
+}
+
+.music-player-container iframe {
+    width: 100%;
+    height: 90px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* [EN] AUTHENTICATION MODAL COMPONENT: Login/Register popup. */
+/* [VN] THÀNH PHẦN MODAL XÁC THỰC: Cửa sổ Đăng nhập/Đăng ký. */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.auth-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.auth-modal-content {
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    padding: 24px;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.auth-modal-overlay.active .auth-modal-content {
+    transform: translateY(0);
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 16px;
+}
+
+.auth-tab {
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.auth-tab.active {
+    color: var(--primary-text);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
+.input-group input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.auth-message {
+    font-size: 0.85rem;
+    text-align: center;
+    min-height: 20px;
+    color: var(--error-color);
+}
+
+.auth-message.success {
+    color: #4caf50;
+}
+
+#close-auth-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    margin-right: -10px;
+    margin-top: -10px;
+    color: var(--secondary-text);
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+}
+
+#close-auth-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+#close-auth-btn:hover {
+    background-color: rgba(240, 152, 25, 0.1);
+    color: #ffffff;
+    border-color: rgba(240, 152, 25, 0.2);
+}
+
+#close-auth-btn:hover i {
+    transform: rotate(90deg);
+}

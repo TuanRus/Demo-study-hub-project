@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Hub</title>
+
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
     <div class="app-background"></div>
 
     <div class="app-container">
-        
         <nav class="sidebar">
             <div class="sidebar-header">
                 <i class="ph-fill ph-student"></i>
                 <span>Study Hub</span>
-            </div>          
+            </div>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#" class="nav-link active" data-view="clock">
@@ -57,7 +59,6 @@
         </nav>
 
         <main class="main-content">
-
             <header class="header-bar">
                 <div class="music-player-bar">
                     <input type="text" id="music-link-input" placeholder="Paste YouTube or Spotify link to play...">
@@ -69,7 +70,14 @@
                     </button>
                 </div>
 
-                </header>
+                <div class="user-controls">
+                    <span class="user-greeting" id="user-greeting" style="display: none;">Hello, User</span>
+                    <button class="login-btn" id="auth-btn">
+                        <i class="ph-fill ph-sign-in"></i>
+                        <span id="auth-btn-text">Login</span>
+                    </button>
+                </div>
+            </header>
 
             <section class="app-view active" id="view-clock">
                 <div class="clock-time" id="clock-time">19:23:20</div>
@@ -85,8 +93,7 @@
                             <i class="ph-fill ph-plus"></i>
                         </button>
                     </div>
-                    <ul id="todo-list">
-                        </ul>
+                    <ul id="todo-list"></ul>
                 </div>
 
                 <div class="pomo-card pomo-timer">
@@ -133,7 +140,7 @@
                     </button>
                 </div>
             </section>
-            
+
             <section class="app-view" id="view-timer">
                 <div class="timer-display" id="timer-display">00:00:00</div>
                 <div class="timer-inputs">
@@ -150,7 +157,7 @@
                     </button>
                 </div>
             </section>
-            
+
             <section class="app-view" id="view-about">
                 <div class="about-card-container">
                     <div class="about-card info">
@@ -163,22 +170,53 @@
                             <a href="https://discord.com/users/838408461145866312" class="social-link" title="Discord" target="_blank">
                                 <i class="ph-fill ph-discord-logo"></i>
                             </a>
-                        </div>                       
-                    </div>        
+                        </div>
+                    </div>
                     <div class="about-card favorite-music-card">
                         <h3><i class="ph-fill ph-music-notes"></i> Favorite Music</h3>
                         <p>Your saved music links</p>
-                        <ul id="favorite-music-list">
-                            </ul>
+                        <ul id="favorite-music-list"></ul>
                     </div>
                 </div>
             </section>
-            <div class="music-player-container" id="music-player-container">
-                </div>
-
+            
+            <div class="music-player-container" id="music-player-container"></div>
         </main>
     </div>
 
-    <script src="script.js" defer></script>
+    <div class="auth-modal-overlay" id="auth-modal">
+        <div class="auth-modal-content">
+            <div class="auth-header">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-action="login">Login</button>
+                    <button class="auth-tab" data-action="register">Sign Up</button>
+                </div>
+                <button class="icon-btn" id="close-auth-btn"><i class="ph-fill ph-x"></i></button>
+            </div>
+            
+            <form id="auth-form" class="auth-form">
+                <div class="input-group">
+                    <label for="auth-username">Username</label>
+                    <input type="text" id="auth-username" required placeholder="Enter username...">
+                </div>
+                <div class="input-group register-only" style="display: none;">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" placeholder="Enter email...">
+                </div>
+                <div class="input-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" required placeholder="Enter password...">
+                </div>
+                <div class="input-group register-only" style="display: none;">
+                    <label for="auth-confirm-password">Confirm Password</label>
+                    <input type="password" id="auth-confirm-password" placeholder="Confirm password...">
+                </div>
+                <p id="auth-message" class="auth-message"></p>
+                <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width: 100%; margin-top: 10px;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

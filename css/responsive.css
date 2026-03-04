@@ -1,0 +1,136 @@
+/* [EN] MEDIA QUERIES: Layout adjustments for screens smaller than 768px. */
+/* [VN] TRUY VẤN PHƯƠNG TIỆN: Điều chỉnh bố cục cho màn hình nhỏ hơn 768px. */
+@media (max-width: 768px) {
+
+    /* [EN] Update root variables for mobile */
+    /* [VN] Cập nhật các biến gốc cho giao diện di động */
+    :root {
+        --sidebar-width: 70px; 
+    }
+
+    /* [EN] Sidebar compression */
+    /* [VN] Thu gọn thanh bên */
+    .sidebar {
+        width: var(--sidebar-width);
+        padding: 20px 10px;
+    }
+
+    .sidebar-header span,
+    .nav-link span {
+        display: none;
+    }
+
+    .sidebar-header {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .sidebar-header i {
+        font-size: 26px;
+    }
+
+    .nav-link {
+        justify-content: center;
+        padding: 12px 10px;
+    }
+    
+    .nav-link i {
+        font-size: 24px;
+    }
+
+    /* [EN] Main content area adjustments */
+    /* [VN] Điều chỉnh khu vực nội dung chính */
+    .main-content {
+        margin-left: var(--sidebar-width); 
+        padding: 20px 15px;
+    }
+
+    .header-bar {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .music-player-bar {
+        width: 100%;
+        min-width: unset; 
+    }
+
+    .user-controls {
+        justify-content: flex-end;
+    }
+
+    /* [EN] Typography scaling for Clock and Timer views */
+    /* [VN] Thu nhỏ kích thước chữ cho các view Đồng hồ và Bấm giờ */
+    #view-clock.active, #view-timer.active, #view-stopwatch.active {
+        height: 70vh;
+    }
+    
+    .clock-time, .timer-display {
+        font-size: 13vw;
+        text-align: center;
+    }
+
+    .clock-date {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .timer-inputs {
+        gap: 8px;
+        transform: scale(0.9);
+    }
+    
+    .timer-inputs input {
+        width: 80px;
+        font-size: 1.2rem;
+    }
+
+    /* [EN] Cards layout reflowing for smaller screens */
+    /* [VN] Cấu trúc lại thứ tự các thẻ cho màn hình nhỏ */
+    #view-pomodoro.active {
+        margin-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    .pomo-card, .todo-card, .settings-card {
+        min-width: 280px;
+        max-width: 450px; 
+        width: 90%;       
+        flex-basis: auto; 
+        flex-grow: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pomo-time-display {
+        font-size: 4.5rem; 
+    }
+
+    .about-card-container {
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;
+        gap: 24px
+    }
+
+    .about-card {
+        width: 90%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* [EN] Floating Music Player mobile adjustments */
+    /* [VN] Điều chỉnh trình phát nhạc nổi trên di động */
+    .music-player-container {
+        width: 95%; 
+        max-width: unset;
+        bottom: 10px;
+    }
+    
+    .music-player-container iframe {
+        height: 80px; 
+    }
+}
