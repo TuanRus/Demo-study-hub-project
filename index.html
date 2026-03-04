@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +15,10 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
     <div class="app-background"></div>
-
     <div class="app-container">
         <nav class="sidebar">
             <div class="sidebar-header">
@@ -127,7 +128,43 @@
                         <input type="number" id="long-break-setting" value="15" min="1">
                     </div>
                 </div>
+                <div class="pomo-notes-card">
+                    <h3><i class="ph-fill ph-notebook"></i> Session Statistics</h3>
+                    <div id="pomo-stats" class="pomo-stats-container">
+                        <div class="stat-item active" id="stat-work">
+                            <span class="label">Working</span>
+                            <span class="count">0</span>
+                        </div>
+                        <div class="stat-item" id="stat-short">
+                            <span class="label">Short Break</span>
+                            <span class="count">0</span>
+                        </div>
+                        <div class="stat-item" id="stat-long">
+                            <span class="label">Long Break</span>
+                            <span class="count">0</span>
+                        </div>
+                    </div>
+                    <p class="pomo-hint">
+                        <i>Focus on your task! You are currently in the <b>Working</b> session.</i>
+                        <button id="learn-pomo-btn" class="text-btn">(What is Pomodoro?)</button>
+                    </p>
+                    <div id="pomo-explanation" class="pomo-modal hidden">
+                        <div class="modal-content">
+                            <h4>What is Pomodoro?</h4>
+                            <p>A time management method that uses a timer to break work into intervals, traditionally 25
+                                minutes in length, separated by short breaks.</p>
+                            <ul>
+                                <li><strong>Work:</strong> 25 mins deep focus.</li>
+                                <li><strong>Short Break:</strong> 5 mins to recharge.</li>
+                                <li><strong>Long Break:</strong> 15-20 mins after 4 sessions.</li>
+                            </ul>
+                            <button id="close-ex-btn">Got it!</button>
+                        </div>
+                    </div>
+                </div>
+
             </section>
+
 
             <section class="app-view" id="view-stopwatch">
                 <div class="timer-display" id="stopwatch-display">00:00:00</div>
@@ -164,10 +201,12 @@
                         <h2>About Me</h2>
                         <p>Hello! This is my information page.</p>
                         <div class="social-links">
-                            <a href="https://www.facebook.com/vo.tuan.960517" class="social-link" title="Facebook" target="_blank">
+                            <a href="https://www.facebook.com/vo.tuan.960517" class="social-link" title="Facebook"
+                                target="_blank">
                                 <i class="ph-fill ph-facebook-logo"></i>
                             </a>
-                            <a href="https://discord.com/users/838408461145866312" class="social-link" title="Discord" target="_blank">
+                            <a href="https://discord.com/users/838408461145866312" class="social-link" title="Discord"
+                                target="_blank">
                                 <i class="ph-fill ph-discord-logo"></i>
                             </a>
                         </div>
@@ -179,7 +218,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <div class="music-player-container" id="music-player-container"></div>
         </main>
     </div>
@@ -193,7 +232,7 @@
                 </div>
                 <button class="icon-btn" id="close-auth-btn"><i class="ph-fill ph-x"></i></button>
             </div>
-            
+
             <form id="auth-form" class="auth-form">
                 <div class="input-group">
                     <label for="auth-username">Username</label>
@@ -212,11 +251,13 @@
                     <input type="password" id="auth-confirm-password" placeholder="Confirm password...">
                 </div>
                 <p id="auth-message" class="auth-message"></p>
-                <button type="submit" class="btn btn-primary" id="auth-submit-btn" style="width: 100%; margin-top: 10px;">Login</button>
+                <button type="submit" class="btn btn-primary" id="auth-submit-btn"
+                    style="width: 100%; margin-top: 10px;">Login</button>
             </form>
         </div>
     </div>
 
     <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

@@ -623,3 +623,145 @@ input[type=number] {
 #close-auth-btn:hover i {
     transform: rotate(90deg);
 }
+
+.pomo-notes-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.pomo-stats-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.stat-item.active {
+    border-color: var(--accent-color);
+    background: rgba(240, 152, 25, 0.1);
+}
+
+.stat-item .label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.stat-item .count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.pomo-notes-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.pomo-stats-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.stat-item.active {
+    border-color: var(--accent-color);
+    background: rgba(240, 152, 25, 0.1);
+}
+
+.stat-item .label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.stat-item .count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.pomo-hint {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.pomo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.pomo-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    border: 1px solid var(--accent-color);
+}
+
+.modal-content h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.modal-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+#close-ex-btn {
+    background: var(--accent-color);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
