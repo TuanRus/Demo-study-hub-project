@@ -1,15 +1,15 @@
-/* [EN] MEDIA QUERIES: Layout adjustments for screens smaller than 768px. */
-/* [VN] TRUY VẤN PHƯƠNG TIỆN: Điều chỉnh bố cục cho màn hình nhỏ hơn 768px. */
+/* VI: Breakpoints System. Cơ chế truy vấn (Media Queries) để kích hoạt layout reflow trên thiết bị mobile. 
+EN: Breakpoints System. Query mechanism (Media Queries) triggering layout reflow on mobile devices. */
 @media (max-width: 768px) {
 
-    /* [EN] Update root variables for mobile */
-    /* [VN] Cập nhật các biến gốc cho giao diện di động */
+    /* VI: Biến thể CSS (CSS Variable Override). Cập nhật state gốc để thu hẹp không gian điều hướng. 
+    EN: CSS Variable Override. Updating root state to compact navigation space. */
     :root {
         --sidebar-width: 70px; 
     }
 
-    /* [EN] Sidebar compression */
-    /* [VN] Thu gọn thanh bên */
+    /* VI: Progressive Disclosure Layout. Ẩn các node Text, nén Sidebar thành Icon-only giúp tối ưu diện tích. 
+    EN: Progressive Disclosure Layout. Hiding Text nodes, compressing Sidebar into Icon-only to optimize space. */
     .sidebar {
         width: var(--sidebar-width);
         padding: 20px 10px;
@@ -38,8 +38,8 @@
         font-size: 24px;
     }
 
-    /* [EN] Main content area adjustments */
-    /* [VN] Điều chỉnh khu vực nội dung chính */
+    /* VI: Responsive Flow. Chuyển Flex-direction từ ngang (Row) sang dọc (Column) cho Header Bar. 
+    EN: Responsive Flow. Switching Flex-direction from horizontal (Row) to vertical (Column) for Header Bar. */
     .main-content {
         margin-left: var(--sidebar-width); 
         padding: 20px 15px;
@@ -61,8 +61,8 @@
         justify-content: flex-end;
     }
 
-    /* [EN] Typography scaling for Clock and Timer views */
-    /* [VN] Thu nhỏ kích thước chữ cho các view Đồng hồ và Bấm giờ */
+    /* VI: Fluid Typography. Sử dụng đơn vị tương đối theo Viewport (vw) giúp font chữ tự co giãn. 
+    EN: Fluid Typography. Utilizing relative Viewport units (vw) for auto-scaling fonts. */
     #view-clock.active, #view-timer.active, #view-stopwatch.active {
         height: 70vh;
     }
@@ -87,8 +87,8 @@
         font-size: 1.2rem;
     }
 
-    /* [EN] Cards layout reflowing for smaller screens */
-    /* [VN] Cấu trúc lại thứ tự các thẻ cho màn hình nhỏ */
+    /* VI: Component Stacking. Xếp chồng Card thay vì trải ngang để phù hợp với màn hình hẹp dọc. 
+    EN: Component Stacking. Stacking Cards vertically instead of horizontally to fit narrow vertical screens. */
     #view-pomodoro.active {
         margin-top: 20px;
         padding-bottom: 80px;
@@ -122,8 +122,8 @@
         margin-right: auto;
     }
 
-    /* [EN] Floating Music Player mobile adjustments */
-    /* [VN] Điều chỉnh trình phát nhạc nổi trên di động */
+    /* VI: Mobile Overlay Tweaks. Override tham số positioning để Music Player không tràn ra khỏi màn hình con. 
+    EN: Mobile Overlay Tweaks. Overriding positioning parameters to keep Music Player within screen bounds. */
     .music-player-container {
         width: 95%; 
         max-width: unset;

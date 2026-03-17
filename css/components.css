@@ -1,5 +1,5 @@
-/* [EN] BUTTON COMPONENTS: Standardized interactive elements. */
-/* [VN] THÀNH PHẦN NÚT BẤM: Các phần tử tương tác được chuẩn hóa. */
+/* VI: Design System - Standard Buttons. Định nghĩa Base component cho nút bấm, tách biệt structure và theme (OOCSS). 
+EN: Design System - Standard Buttons. Defining Base component for buttons, separating structure and theme (OOCSS). */
 .login-btn {
     padding: 10px 20px;
     background-color: var(--btn-bg);
@@ -58,8 +58,8 @@
     background-color: var(--btn-hover);
 }
 
-/* [EN] USER HEADER COMPONENTS: User info and inputs in header. */
-/* [VN] THÀNH PHẦN TIÊU ĐỀ NGƯỜI DÙNG: Thông tin và ô nhập liệu trên tiêu đề. */
+/* VI: Layout Components - Header. Đóng gói cấu trúc flexbox cho thanh điều khiển. 
+EN: Layout Components - Header. Encapsulating flexbox structure for the control bar. */
 .user-controls {
     display: flex;
     align-items: center;
@@ -108,8 +108,8 @@
     background-color: var(--btn-hover);
 }
 
-/* [EN] CARD COMPONENTS: Reusable containers for widgets. */
-/* [VN] THÀNH PHẦN THẺ: Các khung chứa tái sử dụng cho tiện ích. */
+/* VI: UI Components - Cards. Khung chứa tái sử dụng chung, ứng dụng backdrop-filter cho hiệu ứng Glassmorphism. 
+EN: UI Components - Cards. Generic reusable container, applying backdrop-filter for Glassmorphism effect. */
 .pomo-card,
 .todo-card,
 .settings-card,
@@ -159,8 +159,8 @@
     margin-bottom: 24px;
 }
 
-/* [EN] CLOCK COMPONENTS: Time formatting displays. */
-/* [VN] THÀNH PHẦN ĐỒNG HỒ: Hiển thị định dạng thời gian. */
+/* VI: Typography Components - Clock. Quản lý hệ thống text scale đặc thù. 
+EN: Typography Components - Clock. Managing specific text scale system. */
 .clock-time {
     font-size: 10rem;
     font-weight: 700;
@@ -175,8 +175,8 @@
     margin-top: 10px;
 }
 
-/* [EN] POMODORO COMPONENTS: Timer specific UI. */
-/* [VN] THÀNH PHẦN POMODORO: Giao diện riêng của đồng hồ Pomodoro. */
+/* VI: Feature Components - Pomodoro. Đóng gói các style độc lập của logic hẹn giờ. 
+EN: Feature Components - Pomodoro. Encapsulating independent styles of timer logic. */
 .pomo-timer {
     text-align: center;
 }
@@ -215,8 +215,8 @@
     background-color: var(--accent-hover);
 }
 
-/* [EN] TODO LIST COMPONENTS: Task management UI. */
-/* [VN] THÀNH PHẦN DANH SÁCH CÔNG VIỆC: Giao diện quản lý tác vụ. */
+/* VI: Feature Components - Todo List. Bố cục dạng list với flexbox tối ưu cho các thao tác CRUD. 
+EN: Feature Components - Todo List. List layout with flexbox optimized for CRUD operations. */
 .todo-card {
     min-height: 400px;
 }
@@ -292,8 +292,8 @@
     color: var(--error-color);
 }
 
-/* [EN] SETTINGS COMPONENTS: Configuration inputs. */
-/* [VN] THÀNH PHẦN CÀI ĐẶT: Các ô nhập cấu hình. */
+/* VI: Form Components - Settings. Định dạng input control cho việc thiết lập cấu hình. 
+EN: Form Components - Settings. Formatting input controls for configuration setup. */
 .setting-item {
     display: flex;
     justify-content: space-between;
@@ -316,8 +316,8 @@
     font-size: 1rem;
 }
 
-/* [EN] TIMER & STOPWATCH COMPONENTS */
-/* [VN] THÀNH PHẦN BẤM GIỜ & ĐẾM NGƯỢC */
+/* VI: Feature Components - Timer/Stopwatch. Ghi đè CSS mặc định để vô hiệu hóa number spinner, tạo UI phẳng. 
+EN: Feature Components - Timer/Stopwatch. Overriding default CSS to disable number spinners, creating a flat UI. */
 .timer-display {
     font-size: 8rem;
     font-weight: 700;
@@ -367,8 +367,8 @@ input[type=number] {
     font-size: 24px;
 }
 
-/* [EN] ABOUT & MUSIC LIST COMPONENTS */
-/* [VN] THÀNH PHẦN GIỚI THIỆU & DANH SÁCH NHẠC */
+/* VI: Feature Components - Info & Music Lists. 
+EN: Feature Components - Info & Music Lists. */
 .social-links {
     display: flex;
     justify-content: center;
@@ -455,8 +455,8 @@ input[type=number] {
     color: var(--error-color);
 }
 
-/* [EN] FLOATING MUSIC PLAYER COMPONENT */
-/* [VN] THÀNH PHẦN TRÌNH PHÁT NHẠC NỔI */
+/* VI: Overlay Components - Floating Player. Quản lý z-index và absolute positioning tách biệt luồng Document. 
+EN: Overlay Components - Floating Player. Managing z-index and absolute positioning, isolating from the Document flow. */
 .music-player-container {
     position: absolute;
     bottom: 24px;
@@ -484,8 +484,8 @@ input[type=number] {
     border-radius: 8px;
 }
 
-/* [EN] AUTHENTICATION MODAL COMPONENT: Login/Register popup. */
-/* [VN] THÀNH PHẦN MODAL XÁC THỰC: Cửa sổ Đăng nhập/Đăng ký. */
+/* VI: Modal Components - Auth Overlay. Cô lập logic hiển thị popup, kiểm soát trạng thái tương tác qua pointer-events. 
+EN: Modal Components - Auth Overlay. Isolating popup display logic, controlling interaction state via pointer-events. */
 .auth-modal-overlay {
     position: fixed;
     top: 0;
@@ -624,46 +624,8 @@ input[type=number] {
     transform: rotate(90deg);
 }
 
-.pomo-notes-card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-.pomo-stats-container {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.stat-item {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid transparent;
-    transition: 0.3s;
-}
-
-.stat-item.active {
-    border-color: var(--accent-color);
-    background: rgba(240, 152, 25, 0.1);
-}
-
-.stat-item .label {
-    display: block;
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-.stat-item .count {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
+/* VI: Modal Components - Pomodoro Details. Tách biệt Layer và quản lý Layout hiển thị số liệu thống kê. 
+EN: Modal Components - Pomodoro Details. Layer isolation and layout management for statistics display. */
 .pomo-notes-card {
     background-color: var(--card-bg);
     padding: 20px;
@@ -710,60 +672,6 @@ input[type=number] {
     opacity: 0.8;
     border-top: 1px solid #333;
     padding-top: 10px;
-}
-
-.text-btn {
-    background: none;
-    border: none;
-    color: var(--accent-color);
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 0.8rem;
-    margin-left: 5px;
-}
-
-.pomo-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.pomo-modal.hidden {
-    display: none;
-}
-
-.modal-content {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 400px;
-    border: 1px solid var(--accent-color);
-}
-
-.modal-content h4 {
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-
-.modal-content ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-#close-ex-btn {
-    background: var(--accent-color);
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 .text-btn {

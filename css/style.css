@@ -1,5 +1,5 @@
-/* [EN] DESIGN TOKENS: Centralized configuration for theme colors and dimensions. */
-/* [VN] DESIGN TOKENS: Cấu hình tập trung cho màu sắc chủ đề và kích thước. */
+/* VI: Design Tokens. Hệ thống biến (Global State) tập trung quản lý Color Palette và Layout Metrics hỗ trợ Theming. 
+EN: Design Tokens. Variable system (Global State) centralizing Color Palette and Layout Metrics supporting Theming. */
 :root {
     --bg-color: #121212;
     --bg-transparent: rgba(18, 18, 18, 0.8);
@@ -17,8 +17,8 @@
     --background-image-url: url('images/image_1c17a1.jpg'); 
 }
 
-/* [EN] GLOBAL RESET: Unifies default browser rendering. */
-/* [VN] ĐẶT LẠI TOÀN CỤC: Đồng nhất cách hiển thị mặc định của các trình duyệt. */
+/* VI: Global Reset & Base Setup. Đảm bảo tính nhất quán giữa các trình duyệt (Cross-browser Consistency) và ngăn scroll body. 
+EN: Global Reset & Base Setup. Ensuring Cross-browser Consistency and preventing body scroll. */
 * {
     margin: 0;
     padding: 0;
@@ -33,8 +33,8 @@ html, body {
     overflow: hidden; 
 }
 
-/* [EN] MAIN APP LAYOUT: Core structure and background positioning. */
-/* [VN] BỐ CỤC ỨNG DỤNG CHÍNH: Cấu trúc cốt lõi và định vị hình nền. */
+/* VI: App Shell Architecture. Áp dụng kỹ thuật Fixed Background kết hợp CSS Filter để tạo chiều sâu UI (Layering). 
+EN: App Shell Architecture. Applying Fixed Background combined with CSS Filter for UI depth (Layering). */
 .app-background {
     position: fixed;
     top: 0;
@@ -54,8 +54,8 @@ html, body {
     height: 100vh;
 }
 
-/* [EN] SIDEBAR LAYOUT: Navigation menu structure. */
-/* [VN] BỐ CỤC THANH BÊN: Cấu trúc menu điều hướng. */
+/* VI: Sidebar Component. Xây dựng vùng định tuyến UI tĩnh (Static Routing UI) không bị ảnh hưởng bởi scroll nội dung. 
+EN: Sidebar Component. Building Static Routing UI unaffected by content scroll. */
 .sidebar {
     width: var(--sidebar-width);
     background-color: var(--sidebar-bg);
@@ -126,8 +126,8 @@ html, body {
     color: var(--bg-color);
 }
 
-/* [EN] MAIN CONTENT AREA: Wrapper for all views and header. */
-/* [VN] KHU VỰC NỘI DUNG CHÍNH: Bao bọc tất cả các view và tiêu đề. */
+/* VI: Dynamic Content Viewport. Cấu hình vùng hiển thị độc lập cho kiến trúc SPA (Single Page Application) sử dụng flex-grow. 
+EN: Dynamic Content Viewport. Configuring isolated display area for SPA architecture using flex-grow. */
 .main-content {
     flex-grow: 1;
     background-color: var(--bg-transparent);
@@ -146,8 +146,8 @@ html, body {
     margin-bottom: 24px;
 }
 
-/* [EN] VIEW CONTAINERS: Logic for hiding/showing main sections. */
-/* [VN] BỘ CHỨA KHUNG NHÌN: Logic để ẩn/hiện các phần chính. */
+/* VI: View Controller CSS. Quản lý trạng thái đóng/mở (Active State) của các module, kết hợp Keyframe Animation tạo mượt mà. 
+EN: View Controller CSS. Managing Open/Close (Active State) of modules, paired with Keyframe Animation for smoothness. */
 .app-view {
     display: none; 
     animation: fadeIn 0.5s ease-in-out;

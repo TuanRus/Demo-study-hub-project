@@ -1,5 +1,5 @@
-// [EN] Music Player Module
-// [VN] Module Trình phát nhạc
+// VI: Module quản lý Playlist, ứng dụng Factory/Strategy pattern ngầm để phân loại nền tảng. 
+// EN: Playlist management module, implicitly applying Factory/Strategy pattern to classify platforms.
 
 import { getStorageData, setStorageData } from '../utils/storage.js';
 
@@ -10,8 +10,13 @@ export function fetchFavoriteMusic() {
     renderFavoriteMusic(musicList);
 }
 
+// VI: Render function được tách riêng để thực hiện Data Binding một chiều. 
+// EN: Render function isolated to perform one-way Data Binding.
 function renderFavoriteMusic(musicList) {
     const musicListEl = document.getElementById('favorite-music-list');
+    
+    // VI: Guard clause bảo vệ logic thao tác DOM. 
+    // EN: Guard clause protecting DOM manipulation logic.
     if (!musicListEl) return;
     musicListEl.innerHTML = '';
 
@@ -60,6 +65,9 @@ export function initMusic() {
     if(saveMusicBtn) {
         saveMusicBtn.addEventListener('click', () => {
             const link = musicLinkInput.value.trim();
+            
+            // VI: Early returns để validate input ngay từ đầu. 
+            // EN: Early returns to validate input upfront.
             if (!link) return alert("Please paste a link first.");
 
             let type = '';
@@ -87,9 +95,11 @@ export function initMusic() {
             if (!link) return;
             let embedUrl = '';
 
+            // VI: Phân tích URL dựa theo signature của từng service. 
+            // EN: Parsing URL based on each service's signature.
             if (link.includes('spotify.com')) {
                 const url = new URL(link);
-                embedUrl = `https://open.spotify.com/embed${url.pathname}`;
+                embedUrl = `https://open.spotify.com/embed$${url.pathname}`;
             } else if (link.includes('youtube.com') || link.includes('youtu.be')) {
                 let videoId = link.includes('youtu.be') ? new URL(link).pathname.substring(1) : new URL(link).searchParams.get('v');
                 if (videoId) embedUrl = `https://www.youtube.com/embed/${videoId}`;

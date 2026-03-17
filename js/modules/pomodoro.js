@@ -1,9 +1,11 @@
-// [EN] Pomodoro Timer Module
-// [VN] Module Đồng hồ Pomodoro
+// VI: Cỗ máy trạng thái (State Machine) quản lý phiên Pomodoro. Tách biệt Timer logic khỏi UI Event. 
+// EN: State machine managing Pomodoro sessions. Isolates Timer logic from UI Events.
 
 import { formatTime } from '../utils/formatters.js';
 
 export function initPomodoro() {
+    // VI: Khởi tạo DOM cache để tránh query lại nhiều lần. 
+    // EN: Initializing DOM cache to prevent redundant queries.
     const pomoStatusEl = document.getElementById('pomo-status');
     const pomoTimeEl = document.getElementById('pomo-time');
     const pomoStartBtn = document.getElementById('pomo-start-pause');
@@ -31,6 +33,8 @@ export function initPomodoro() {
     const alarmSound = new Audio('assets/alarm.mp3');
     alarmSound.preload = 'auto';
 
+    // VI: Hàm đồng bộ View với State hiện tại. 
+    // EN: Function syncing View with the current State.
     function updateUIStats() {
         if (statWorkCount) statWorkCount.textContent = stats.work;
         if (statShortCount) statShortCount.textContent = stats.shortBreak;
@@ -78,6 +82,9 @@ export function initPomodoro() {
                 clearInterval(pomoInterval);
                 playAlarmShort(3);
                 if (pomoStatusEl) pomoStatusEl.textContent = 'Time is up!';
+                
+                // VI: Chuyển đổi trạng thái tự động sau khoảng trễ (5s buffer). 
+                // EN: Automatic state transition after a delay buffer (5s).
                 setTimeout(() => {
                     if (pomoIsRunning) {
                         switchMode();
@@ -88,6 +95,8 @@ export function initPomodoro() {
         }, 1000);
     }
 
+    // VI: State handler xử lý logic luân chuyển các phase của Pomodoro. 
+    // EN: State handler managing transition logic for Pomodoro phases.
     function switchMode() {
         stats[currentMode === 'work' ? 'work' : (currentMode === 'shortBreak' ? 'shortBreak' : 'longBreak')]++;
 
@@ -133,6 +142,8 @@ export function initPomodoro() {
             switchMode();
         });
 
+        // VI: Delegate event listener cho mảng input để cập nhật cài đặt realtime. 
+        // EN: Delegate event listener array for realtime settings update.
         const inputsToWatch = [timeWorkInput, timeShortBreakInput, timeLongBreakInput];
         inputsToWatch.forEach(input => {
             if (input) {

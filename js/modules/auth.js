@@ -1,5 +1,5 @@
-// [EN] Authentication Module
-// [VN] Module Xác thực người dùng
+// VI: Module xử lý định danh, cô lập logic authentication khỏi luồng thực thi chính (SRP). 
+// EN: Identity handling module, isolating authentication logic from the main execution thread (SRP).
 
 export function initAuth() {
     const authBtn = document.getElementById('auth-btn');
@@ -17,6 +17,8 @@ export function initAuth() {
     const authConfirmPassword = document.getElementById('auth-confirm-password');
     const registerOnlyFields = document.querySelectorAll('.register-only');
 
+    // VI: Biến trạng thái quản lý mode hiện tại (login/register). 
+    // EN: State variable managing the current mode (login/register).
     let currentAuthMode = 'login'; 
 
     function checkLoginStatus() {
@@ -41,6 +43,8 @@ export function initAuth() {
         }
     }
 
+    // VI: Guard clause chặn binding nếu thiếu DOM node. 
+    // EN: Guard clause preventing binding if DOM node is missing.
     if(authBtn) {
         authBtn.addEventListener('click', () => {
             const currentUser = localStorage.getItem('studyhub_currentUser');
@@ -62,6 +66,8 @@ export function initAuth() {
         closeAuthBtn.addEventListener('click', () => authModal.classList.remove('active'));
     }
 
+    // VI: Chuyển đổi linh hoạt View và Validation rules dựa trên State. 
+    // EN: Dynamically switching View and Validation rules based on State.
     authTabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
             authTabs.forEach(t => t.classList.remove('active'));
@@ -96,6 +102,8 @@ export function initAuth() {
                 const email = authEmail.value.trim();
                 const confirmPassword = authConfirmPassword.value.trim();
 
+                // VI: Early return để chặn flow nếu validation thất bại. 
+                // EN: Early return to block flow if validation fails.
                 if (password !== confirmPassword) {
                     authMessage.textContent = "Passwords do not match!";
                     return;
@@ -119,6 +127,7 @@ export function initAuth() {
                 const storedUser = users[username];
                 let isPasswordCorrect = false;
 
+                // VI: Xử lý tương thích ngược cho cấu trúc data cũ (string vs object). EN: Backward compatibility handling for old data structures (string vs object).
                 if (storedUser) {
                     if (typeof storedUser === 'string') isPasswordCorrect = (storedUser === password);
                     else if (storedUser.password === password) isPasswordCorrect = true;
