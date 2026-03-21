@@ -99,17 +99,21 @@ export function initMusic() {
             // EN: Parsing URL based on each service's signature.
             if (link.includes('spotify.com')) {
                 const url = new URL(link);
-                embedUrl = `https://open.spotify.com/embed$${url.pathname}`;
+                embedUrl = `https://open.spotify.com/embed$$${url.pathname}`;
             } else if (link.includes('youtube.com') || link.includes('youtu.be')) {
-                let videoId = link.includes('youtu.be') ? new URL(link).pathname.substring(1) : new URL(link).searchParams.get('v');
-                if (videoId) embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                const ytRegex = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|live\/|shorts\/))([\w-]{11})/;
+                const match = link.match(ytRegex);
+                
+                if (match && match[1]) {
+                    const videoId = match[1];
+                    embedUrl = `https://www.youtube.com/embed/${videoId}?origin=${window.location.origin}`;
+                }
             }
-
             if (embedUrl && musicPlayerContainer) {
-                musicPlayerContainer.innerHTML = `<iframe src="${embedUrl}" allow="encrypted-media" allowfullscreen></iframe>`;
+                musicPlayerContainer.innerHTML = `<iframe src="${embedUrl}" allow="encrypted-media" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
                 musicPlayerContainer.classList.add('active');
             } else {
-                alert('Invalid link. Please try a Spotify or YouTube link.');
+                alert('Invalid link. Please try a valid Spotify or YouTube link.');
             }
         });
     }
